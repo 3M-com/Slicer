@@ -157,9 +157,15 @@ protected:
     vtkSmartPointer<vtkGlyph2D> Glypher;
     vtkSmartPointer<vtkActor2D> LabelsActor;
     vtkSmartPointer<vtkLabelPlacementMapper> LabelsMapper;
+
+    vtkSmartPointer<vtkPolyData> LabelsLinePolyData;
+    vtkSmartPointer<vtkActor2D> LabelsLineActor;
+    vtkSmartPointer<vtkPolyDataMapper2D> LabelsLineMapper;
+
     // Properties used to control the appearance of selected objects and
     // the manipulator in general.
     vtkSmartPointer<vtkProperty2D> Property;
+    vtkSmartPointer<vtkProperty2D> LabelsLineProperty;
   };
 
   ControlPointsPipeline2D* GetControlPointsPipeline(int controlPointType);

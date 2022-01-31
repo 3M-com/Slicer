@@ -122,6 +122,7 @@ protected:
     vtkSmartPointer<vtkProperty>     Property;
     vtkSmartPointer<vtkProperty>     OccludedProperty;
     vtkSmartPointer<vtkTextProperty> OccludedTextProperty;
+    vtkSmartPointer<vtkProperty>     LabelConnectorLineProperty;
 
     vtkSmartPointer<vtkPolyData> VisiblePointsPolyData;
 
@@ -138,6 +139,12 @@ protected:
     vtkSmartPointer<vtkActor>   OccludedActor;
     vtkSmartPointer<vtkActor2D> LabelsActor;
     vtkSmartPointer<vtkActor2D> LabelsOccludedActor;
+
+    vtkSmartPointer<vtkPolyData> LabelsLinePolyData;
+    vtkSmartPointer<vtkTubeFilter> LabelsLineTubeFilter;
+
+    vtkSmartPointer<vtkPolyDataMapper> LabelsLineMapper;
+    vtkSmartPointer<vtkActor> LabelsLineActor;
   };
 
   ControlPointsPipeline3D* GetControlPointsPipeline(int controlPointType);

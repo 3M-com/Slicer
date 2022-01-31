@@ -145,6 +145,11 @@ public:
   /// \param context Name of the interaction context. By default it is empty string, meaning mouse
   int GetActiveControlPoint(std::string context=vtkMRMLMarkupsDisplayNode::GetDefaultContextName());
 
+  /// Set active label connector line visibility to true or false
+  void SetLabelConnectorLineVisibility(bool visibility);
+  /// Get active label connector line visibility
+  bool GetLabelConnectorLineVisibility(void);
+
   /// Set the text scale of the associated text.
   vtkGetMacro(TextScale,double);
   vtkSetMacro(TextScale,double);
@@ -443,6 +448,11 @@ public:
   vtkSetMacro(InteractionHandleScale, double);
   vtkGetMacro(InteractionHandleScale, double);
 
+  /// Get/Set LabelConnectorLine size relative to the window size.
+  /// The length of the connector line is defined as "scale" percentage of diagonal size of the window.
+  vtkSetMacro(LabelConnectorLineScale, double);
+  vtkGetMacro(LabelConnectorLineScale, double);
+
   /// Get data set containing the scalar arrays for this node type.
   /// For markups it is the curve poly data
   virtual vtkDataSet* GetScalarDataSet() override;
@@ -485,6 +495,13 @@ protected:
   double GlyphScale;
   double GlyphSize;
   bool UseGlyphScale;
+
+  // Are label connector lines displayed
+  bool LabelConnectorLineVisibility;
+  // Length of label connector line in percent of diagonal display width
+  double LabelConnectorLineScale;
+  // Color of label connector line
+  double LabelConnectorLineColor[3];
 
   bool SliceProjection;
   bool SliceProjectionUseFiducialColor;

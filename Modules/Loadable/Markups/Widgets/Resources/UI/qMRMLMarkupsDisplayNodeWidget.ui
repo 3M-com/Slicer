@@ -64,7 +64,51 @@
      </property>
     </widget>
    </item>
-   <item row="5" column="1">
+    <item row="1" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+          <widget class="QCheckBox" name="connectorLineVisibilityCheckBox">
+            <property name="toolTip">
+              <string>Overall visibility of label text connector lines in all views</string>
+            </property>
+            <property name="text">
+              <string/>
+            </property>
+          </widget>
+        </item>
+        <item>
+          <widget class="QLabel" name="connectorLineScaleLabel">
+            <property name="text">
+              <string>Scale:</string>
+            </property>
+          </widget>
+        </item>
+        <item>
+          <widget class="ctkSliderWidget" name="connectorLineScaleSliderWidget">
+            <property name="singleStep">
+              <double>1.00000000000000</double>
+            </property>
+            <property name="maximum">
+              <double>30.000000000000000</double>
+            </property>
+            <property name="suffix">
+              <string> %</string>
+            </property>
+            <property name="toolTip">
+              <string>Scale of connector line in percent of screenwidth</string>
+            </property>
+          </widget>
+        </item>
+      </layout>
+    </item>
+    <item row="1" column="0">
+      <widget class="QLabel" name="ConnectorLineLabel">
+        <property name="text">
+          <string>Label connector:</string>
+        </property>
+      </widget>
+    </item>
+    <item row="5" column="1">
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QPushButton" name="glyphSizeIsAbsoluteButton">
